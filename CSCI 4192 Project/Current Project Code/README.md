@@ -5,11 +5,11 @@
 - There should be 2 versions of the Team's scripts (one desktop and one remote). You should not need to touch the remote version if you are still running the script on the same configured VM (if the VM is different, then do the following steps for the VM as well). For the desktop version, you will need to find the coordinates for 3 locations. The New messages button, the latest message, and the chat box. Note: absolute coordinates were used because Teams appears differently on different devices, even with ratios applied.
     - First, run the find_coords.py, and open a conversation with someone on Teams. You will need to send enough messages so that you can scroll up and not see the latest message immediately when it is sent (i.e., Teams typically scrolls down to the latest message when a new message is sent to you, but if you are scrolled far enough up in the chat then it does not do this, and rather the "New messages" button appears in the bottom right corner of the screen).
     - Then, on the VM Teams account, send a message. You should see the "New messages" button appear, as in the image below. Hover your mouse over it and note down the X and Y coordinates. This will be the values of BUTTON_PRESS_X_COORD and BUTTON_PRESS_Y_COORD respectively in the config section of the script.
-    ![](New Message Button.png)
+    ![](NewMessageButton.png)
     - Then, scroll down, and make sure the latest message was sent by the VM user. Then, hover your mouse over it, where the arrow indicates in the image below, and note down the X and Y coordinates. This will be the values of COPY_X_COORD and COPY_Y_COORD respectively in the config section of the script.
-    ![](New Message.png)
+    ![](NewMessage.png)
     - Then, hover your mouse over the text box, where the arrow indicates in the image below, and note down the X and Y coordinates. This will be the values of WRITE_X_COORD and WRITE_Y_COORD respectively in the config section of the script.
-    ![](Text Box.png)
+    ![](TextBox.png)
 - Now that you have all of these values, input them into their respective parameters in chatbot_desktop_version.py. The script should now be ready to run.
 - PLEASE NOTE that when running the scripts, you MUST have the same version of parsed_conversation.txt on both ends. Therefore if you need to generate a new version of it (for a longer conversation for example), then you must make sure that it is the same on both the VM and your desktop/laptop.
 - Once you are ready to run the scripts, you may begin running it in the order of: VM first, then desktop/laptop.
