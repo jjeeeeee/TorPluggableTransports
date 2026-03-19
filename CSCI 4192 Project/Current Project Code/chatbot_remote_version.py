@@ -34,6 +34,7 @@ pyautogui.FAILSAFE = True
 def is_root() -> bool:
     return os.geteuid() == 0
 
+
 def run_root_cmd(cmd: list, check: bool = True):
     """
     Run a command as root. If not root, it will use sudo.
@@ -42,6 +43,7 @@ def run_root_cmd(cmd: list, check: bool = True):
         return subprocess.run(cmd, check=check)
     else:
         return subprocess.run(["sudo"] + cmd, check=check)
+
 
 def disable_nic_offloads(interface: str):
     """
@@ -68,6 +70,7 @@ def start_tshark_capture():
     print("📡 Starting tshark capture...")
     cmd = ["tshark", "-i", INTERFACE, "-w", PCAP_OUTPUT_FILE, "-q"]
     return subprocess.Popen(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
 
 def stop_tshark(process):
     print("Stopping tshark capture...")

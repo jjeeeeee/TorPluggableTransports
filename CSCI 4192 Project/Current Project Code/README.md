@@ -16,3 +16,4 @@
 - This script automatically captures a Wireshark session using tshark, and disables NIC offloading, so you shouldn't need to worry about anything after the scripts begin running.
 - You should begin seeing the messages being sent. You must leave this running until completion. It's recommended that you check up on it every so often to make sure that the messages are still being sent.
 - Once the scripts are finished running and the conversation is fullyed played out, there should be a .pcapng file in the specified location.
+- When collecting data using a Tor pluggable transport, copy the 50_user.conf.txt file contents into /usr/local/etc/torrc.d/50_user.conf, and then follow the instructions in the comments of that file for proper usage.
